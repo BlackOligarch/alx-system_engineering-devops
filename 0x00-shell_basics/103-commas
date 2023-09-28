@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p -A -m -d
+ls xamp
