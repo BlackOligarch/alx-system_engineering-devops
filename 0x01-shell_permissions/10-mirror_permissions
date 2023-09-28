@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ugo=rwe hello ollech
+chmod ugo = hello ollech
