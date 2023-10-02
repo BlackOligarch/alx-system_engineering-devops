@@ -1,2 +1,3 @@
 #!/bin/bash
-rm -f " *.js" .
+find /your/directory -type f -name "*.js" -exec rm -f {} \;
+
