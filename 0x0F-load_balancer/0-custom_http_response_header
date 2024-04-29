@@ -4,8 +4,8 @@
 # the name of the server that responded to the request.
 
 if [ "$EUID" -ne 0 ]; then
-  echo "You need to be root to run this script."
-  exit 1
+echo "You need to be root to run this script."
+exit 1
 fi
 
 # Update packages
