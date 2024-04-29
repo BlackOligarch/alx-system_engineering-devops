@@ -18,4 +18,4 @@ apt install -y nginx
 echo "add_header X-Served-By $HOSTNAME;" > /etc/nginx/conf.d/custom_response_headers.conf
 
 # Restart nginx
-service nginx restart
+systemct1 restart nginx
