@@ -5,8 +5,8 @@ This script takes an employee ID and returns the information about his/her
 TODO list progress. Specifically, the ones they have completed.
 """
 
-import utils_methods
 import sys
+import utils_methods
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
