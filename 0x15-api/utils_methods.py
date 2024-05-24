@@ -42,8 +42,8 @@ def get_completed_tasks(tasks: "list[dict]") -> "list[dict]":
 
 
 def print_completed_tasks(
-    user: str, num_of_tasks: int, completed_tasks: "list[dict]"
-) -> None:
+        user: str, num_of_tasks: int, completed_tasks: "list[dict]"
+        ) -> None:
     """
     Prints the completed tasks for a given user.
 
@@ -54,9 +54,9 @@ def print_completed_tasks(
         representing completed tasks.
     """
     print(
-        f"Employee {user} is done with "
-        f"tasks({len(completed_tasks)}/{num_of_tasks}):"
-    )
+            f"Employee {user} is done with "
+            f"tasks({len(completed_tasks)}/{num_of_tasks}):"
+            )
 
     for task in completed_tasks:
         print(f"\t {task.get('title')}")
@@ -104,15 +104,15 @@ def export_to_json(user_id: int, username: str, tasks: "list[dict]") -> None:
 
     for task in tasks:
         data[user_id].append(
-            {
-                "task": task.get("title"),
-                "completed": task.get("completed"),
-                "username": username,
-            }
-        )
+                {
+                    "task": task.get("title"),
+                    "completed": task.get("completed"),
+                    "username": username,
+                    }
+                )
 
-    with open(f"{user_id}.json", "w", encoding="utf-8") as json_file:
-        json.dump(data, json_file, indent=4)
+        with open(f"{user_id}.json", "w", encoding="utf-8") as json_file:
+            json.dump(data, json_file, indent=4)
 
 
 def export_to_csv(user_id: int, username: str, tasks: "list[dict]") -> None:
@@ -126,25 +126,25 @@ def export_to_csv(user_id: int, username: str, tasks: "list[dict]") -> None:
     """
     with open(f"{user_id}.csv", "w", newline="") as csv_file:
         fieldnames = [
-            "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"
-        ]
+                "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"
+                ]
         writer = csv.DictWriter(
-            csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL
-        )
+                csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL
+                )
 
         for task in tasks:
             writer.writerow(
-                {
-                    "USER_ID": f"{user_id}",
-                    "USERNAME": f"{username}",
-                    "TASK_COMPLETED_STATUS": f"{task.get('completed')}",
-                    "TASK_TITLE": f"{task.get('title')}",
-                }
-            )
+                    {
+                        "USER_ID": f"{user_id}",
+                        "USERNAME": f"{username}",
+                        "TASK_COMPLETED_STATUS": f"{task.get('completed')}",
+                        "TASK_TITLE": f"{task.get('title')}",
+                        }
+                    )
 
 
-def export_all_to_json(users: "list[dict]", tasks: "list[dict]") -> None:
-    """
+            def export_all_to_json(users: "list[dict]", tasks: "list[dict]") -> None:
+                """
     Export user tasks to a JSON file.
 
     Args:
@@ -163,15 +163,15 @@ def export_all_to_json(users: "list[dict]", tasks: "list[dict]") -> None:
             tasks_by_user[user_id] = []
 
         tasks_by_user[user_id].append(
-            {
-                "username": username,
-                "task": task.get("title"),
-                "completed": task.get("completed"),
-            }
-        )
+                {
+                    "username": username,
+                    "task": task.get("title"),
+                    "completed": task.get("completed"),
+                    }
+                )
 
-    with open("todo_all_employees.json", "w", encoding="utf-8") as json_file:
-        json.dump(tasks_by_user, json_file, indent=4)
+        with open("todo_all_employees.json", "w", encoding="utf-8") as json_file:
+            json.dump(tasks_by_user, json_file, indent=4)
 
 
 def get_users() -> "list[dict]":

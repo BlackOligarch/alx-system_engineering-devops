@@ -4,8 +4,8 @@
 This module provides a function to export user tasks to a CSV file.
 """
 
-import utils_methods
 import sys
+import utils_methods
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
