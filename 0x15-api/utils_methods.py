@@ -143,8 +143,8 @@ def export_to_csv(user_id: int, username: str, tasks: "list[dict]") -> None:
                     )
 
 
-            def export_all_to_json(users: "list[dict]", tasks: "list[dict]") -> None:
-                """
+def export_all_to_json(users: "list[dict]", tasks: "list[dict]") -> None:
+    """
     Export user tasks to a JSON file.
 
     Args:
